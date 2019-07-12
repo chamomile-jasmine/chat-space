@@ -1,0 +1,12 @@
+.content-left
+  .user
+    = link_to root_path do
+      %p.user__name
+        = current_user.name
+    = link_to new_group_path do
+      %i.fa.fa-edit
+    = link_to edit_user_registration_path do
+      %i.fa.fa-cog
+
+  .group-wrapper
+    = render partial: 'groups/group-list', collection: @groups, as: :group

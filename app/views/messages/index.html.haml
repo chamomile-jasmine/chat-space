@@ -6,40 +6,18 @@
     .header
       .left-header
         .left-header__title
-          グループの名前
+          = @group.name
         %ul.left-header__members
-          Member：
-          %li.member
-            メンバーの名前
-          %li.member
-            メンバーの名前
-          %li.member
-            メンバーの名前
+          MEMBER:
+          = @users.pluck(:name).join(",")
+
       .right-header
         .right-header__button
           Edit
+
     .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-            メンバー
-        .lower-meesage
-          .lower-message__content
-            メッセージ内容
-      .message
-        .upper-message
-          .upper-message__user-name
-            メンバー
-        .lower-meesage
-          .lower-message__content
-            メッセージ内容
-      .message
-        .upper-message
-          .upper-message__user-name
-            メンバー
-        .lower-meesage
-          .lower-message__content
-            メッセージ内容
+      = render partial: 'messages/message', collection: @messages
+
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'

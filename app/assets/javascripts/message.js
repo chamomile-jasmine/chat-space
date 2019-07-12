@@ -2,10 +2,8 @@ $(function() {
 
   // メッセージ表示のHTMLを生成
   function buildHTML(message) {
-    var insertImage = '';
-    if (message.image.url) {
-      insertImage = `<img src="${message.image.url}">`;
-    }
+    var insertImage = message.image.url ? `<img src="${message.image.url}">` : "";
+     
     var html = `
     <div class="message">
      <div class="upper-message">
@@ -27,7 +25,6 @@ $(function() {
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formdata = new FormData(this);
-    console.log(formdata);
     $.ajax({
       type: 'POST',
       url: location.href,
@@ -40,6 +37,7 @@ $(function() {
       var message = buildHTML(data);
       $('.messages').append(message);
       $('.form__message').val('');
+      $('#new_message')[0].reset();
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
       leastMessage = data;
     })

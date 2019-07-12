@@ -36,7 +36,6 @@ $(function() {
     .done(function(data) {
       var message = buildHTML(data);
       $('.messages').append(message);
-      // $('.form__message').val('');
       $('#new_message')[0].reset();
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
       leastMessage = data;

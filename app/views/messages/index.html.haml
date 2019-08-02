@@ -13,7 +13,8 @@
 
       .right-header
         .right-header__button
-          Edit
+          = link_to edit_group_path(@group) do
+            %p Edit
 
     .messages
       = render partial: 'messages/message', collection: @messages

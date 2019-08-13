@@ -71,3 +71,5 @@ gem 'jquery-turbolinks'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem 'libv8', '= 3.3.10.4'

@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', '= 0.10.2', platforms: :ruby
+# gem 'therubyracer', '= 0.10.2', platforms: :ruby
 # gem 'mini_racer', platforms: :ruby
 
 # Use jquery as the JavaScript library
@@ -44,6 +44,11 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -72,4 +77,4 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-gem 'libv8', '= 3.3.10.4'
+# gem 'libv8', '= 3.3.10.4'
